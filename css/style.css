@@ -73,55 +73,95 @@ html, body {
     box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 
-.service-icon {
-    font-size: 34px;
-    margin-bottom: 8px;
+.service-icon img {
+    width: 48px; /* SAME SIZE everywhere */
+    height: 48px;
+    object-fit: contain;
 }
-/* ===============================
-   PRICE LIST
-   =============================== */
+
+/* Optional: slightly bigger on desktop */
+@media (min-width: 768px) {
+    .service-icon img {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+
+/* PRICE LIST */
 .pricing {
     padding: 40px 15px;
     text-align: center;
 }
 
-.pricing h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #3a2a00;
-}
-
-.pricing-table-wrapper {
-    overflow-x: auto; /* mobile safety */
-}
-
-.pricing-table {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    border-collapse: collapse;
+.price-box {
+    max-width: 520px;
+    margin: auto;
     background: #fffaf0;
     border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.12);
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-.pricing-table th {
-    background: #ffb703;
-    color: #3a2a00;
-    padding: 12px;
+    .price-box table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .price-box th {
+        background: #ffb703;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .price-box td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+/* PRICE LIST ALIGNMENT FIX */
+/* Force section headers to align left */
+.price-section td {
+    text-align: left !important;
+    padding-left: 18px;
+}
+
+.price-box table {
+    text-align: left;
+}
+
+.price-box th {
+    text-align: left;
+}
+
+.price-box td {
+    text-align: left;
+    padding: 12px 18px;
+    vertical-align: middle;
+}
+
+    /* Right-align only the price column */
+    .price-box td:last-child,
+    .price-box th:last-child {
+        text-align: right;
+    }
+
+/* Section headers like Ironing / Dry Cleaning */
+.price-section td {
+    background: #fff1c1;
     font-weight: bold;
+    font-size: 16px;
+    padding: 14px 18px;
+    text-align: left;
+}
+/* Fix Note alignment */
+.price-note td {
+    text-align: center !important;
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
-.pricing-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    color: #3a2a00;
-}
-
-.pricing-table tr:last-child td {
-    border-bottom: none;
-}
 /* WORKING HOURS */
 .timing {
     text-align: center;
@@ -162,4 +202,3 @@ html, body {
         font-weight: bold;
         text-decoration: none;
     }
-
