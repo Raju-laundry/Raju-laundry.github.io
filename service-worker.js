@@ -1,13 +1,13 @@
-const CACHE_NAME = "raju-laundry-v2";
+const CACHE_NAME = "raju-laundry-v1";
 
 const FILES_TO_CACHE = [
-  "/rajulaundry/",
-  "/rajulaundry/index.html",
-  "/rajulaundry/css/style.css",
-  "/rajulaundry/js/pwa.js",
-  "/rajulaundry/manifest.json",
-  "/rajulaundry/images/logo-192.png",
-  "/rajulaundry/images/logo-512.png"
+  "/",
+  "/index.html",
+  "/css/style.css",
+  "/manifest.json",
+  "/service-worker.js",
+  "/images/logo-192.png",
+  "/images/logo-512.png"
 ];
 
 self.addEventListener("install", event => {
@@ -18,8 +18,6 @@ self.addEventListener("install", event => {
 
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request).then(res => res || fetch(event.request))
   );
 });
