@@ -21,9 +21,8 @@
         <h2>Book Your Pickup</h2>
 
         <form onsubmit="sendToWhatsApp(); return false;">
-            <input type="text" id="name" placeholder="Your Name"
-                   maxlength="20" required
-                   oninput="this.value=this.value.replace(/[^a-zA-Z ]/g,'')" />
+            <input type="text" id="name" placeholder="Your Name" maxlength="20" required
+                inputmode="text" oninput="handleNameInput(this)" />
 
             <input type="tel" id="mobile" placeholder="Mobile Number"
                    maxlength="10" required inputmode="numeric"
@@ -210,6 +209,17 @@
             );
         }
 </script>
+<script>
+  function handleNameInput(input) {
+    // Allow only letters & spaces
+    input.value = input.value.replace(/[^a-zA-Z ]/g, '');
+
+    // Hard limit (mobile-safe)
+    if (input.value.length > 20) {
+      input.value = input.value.substring(0, 20);
+    }
+  }
+</script>
 
    <script>
     if ("serviceWorker" in navigator) {
@@ -222,6 +232,7 @@
 
 </body>
 </html>
+
 
 
 
