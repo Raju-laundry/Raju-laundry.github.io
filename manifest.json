@@ -1,12 +1,10 @@
 {
   "name": "Raju Laundry & Dry Cleaners",
   "short_name": "Raju Laundry",
-  "start_url": "/rajulaundry/index.html",
-  "scope": "/rajulaundry/",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffe28a",
+  "background_color": "#fff7d6",
   "theme_color": "#ffb703",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "images/logo-192.png",
